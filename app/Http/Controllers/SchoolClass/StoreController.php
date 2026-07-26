@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Teacher;
+namespace App\Http\Controllers\SchoolClass;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class StoreController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -13,5 +13,10 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         //
+    }
+
+        public function store()
+    {
+        return "Ini adalah halaman penambahan data siswa";
     }
 }
