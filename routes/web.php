@@ -2,6 +2,14 @@
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\MajorController;
+use App\Http\Controllers\SchoolClass\IndexController;
+use App\Http\Controllers\SchoolClass\ShowController;     
+use App\Http\Controllers\SchoolClass\StoreController;
+use App\Http\Controllers\SchoolClass\UpdateController;
+use App\Http\Controllers\SchoolClass\DestroyController;
+use App\Http\Controllers\SchoolClass\EditController; 
+use App\Http\Controllers\SchoolClass\CreateController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -44,4 +52,22 @@ Route::name('teachers.')->prefix('teachers')->group(function () {
 
 });
 
+Route::resource('majors', MajorController::class);
 
+Route::name('classes.')->prefix('classes')->group(function () {
+
+    Route::get('/', IndexController::class)->name('index');
+
+    Route::get('/create', CreateController::class)->name('create');
+
+    Route::post('/', StoreController::class)->name('store');
+
+    Route::get('/{id}', ShowController::class)->name('show');
+
+    Route::get('/{id}/edit', EditController::class)->name('edit');
+
+    Route::put('/{id}', UpdateController::class)->name('update');
+
+    Route::delete('/{id}', DestroyController::class)->name('destroy');
+
+});

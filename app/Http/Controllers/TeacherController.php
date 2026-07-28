@@ -7,36 +7,36 @@ class TeacherController extends Controller
 {
     public function index()
 {
-    return "Displaying teacher list";
+    return "Menampilkan daftar guru";
 }
 
 public function create()
 {
-    return "Displaying create teacher form";
+    return "Menampilkan form tambah guru";
 }
 
 public function store()
 {
-    return "Storing new teacher";
+    return "Menyimpan data guru baru";
 }
 
 public function show(string $id)
 {
-    return "Displaying teacher with ID: {$id}";
+    return "Menampilkan guru dengan ID: {$id}";
 }
 
 public function edit(string $id)
 {
-    return "Displaying edit teacher form with ID: {$id}";
+    return "Menampilkan form edit guru dengan ID: {$id}";
 }
 
 public function update(string $id)
 {
-    return "Updating teacher with ID: {$id}";
+    return "Mengupdate data guru dengan ID: {$id}";
 }
 
 public function destroy(string $id)
 {
-    return "Deleting teacher with ID: {$id}";
+    return "Menghapus guru dengan ID: {$id}";
 }
 }
