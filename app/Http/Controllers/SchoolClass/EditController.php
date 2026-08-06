@@ -17,6 +17,6 @@ class EditController extends Controller
 
        public function edit(string $id)
     {
-        return "Ini adalah form mengedit kelas dengan ID: {$id}";
+        return "Menampilkan halaman edit siswa";
     }
 }

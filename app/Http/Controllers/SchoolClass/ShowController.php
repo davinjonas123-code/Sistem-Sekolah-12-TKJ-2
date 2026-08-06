@@ -17,6 +17,6 @@ class ShowController extends Controller
 
       public function show(string $id)
     {
-        return "Ini adalah kelas dengan ID: {$id}";
+        return "Menampilkan kelas dengan ID: {$id}";
     }
 }

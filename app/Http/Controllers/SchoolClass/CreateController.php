@@ -16,6 +16,6 @@ class CreateController extends Controller
     }
             public function create()
     {
-        return "Ini adalah halaman tambah kelas";
+        return "Menampilkan halaman tambah siswa";
     }
 }

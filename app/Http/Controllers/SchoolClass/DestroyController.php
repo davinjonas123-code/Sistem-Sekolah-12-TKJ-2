@@ -17,7 +17,7 @@ class DestroyController extends Controller
 
         public function destroy(string $id)
     {
-        return "Menghapus data siswa dengan ID: {$id}";
+        return "Menghapus data kelas";
     }
 
 }

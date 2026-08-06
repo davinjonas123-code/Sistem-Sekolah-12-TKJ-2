@@ -12,7 +12,7 @@ class StoreController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return "Ini adalah halaman penyimpanan data kelas";
+        return "Melakukan penambahan data kelas";
     }
 
     

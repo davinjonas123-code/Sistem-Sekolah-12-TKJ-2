@@ -17,6 +17,6 @@ class IndexController extends Controller
 
        public function index()
     {
-        return "Ini adalah halaman daftar kelas";
+        return "Menampilkan halaman daftar kelas";
     }
 }

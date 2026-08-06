@@ -17,6 +17,6 @@ class UpdateController extends Controller
 
         public function update(string $id)
     {
-        return "Ini adalah halaman mengubah data kelas dengan ID: {$id}";
+        return "Melakukan perubahan data kelas";
     }
 }
