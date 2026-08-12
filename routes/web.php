@@ -4,17 +4,18 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\SchoolClass\IndexController;
-use App\Http\Controllers\SchoolClass\ShowController;     
+use App\Http\Controllers\SchoolClass\ShowController;
 use App\Http\Controllers\SchoolClass\StoreController;
 use App\Http\Controllers\SchoolClass\UpdateController;
 use App\Http\Controllers\SchoolClass\DestroyController;
-use App\Http\Controllers\SchoolClass\EditController; 
+use App\Http\Controllers\SchoolClass\EditController;
 use App\Http\Controllers\SchoolClass\CreateController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::name('students.')->prefix('students')->group(function () {
 
@@ -34,6 +35,7 @@ Route::name('students.')->prefix('students')->group(function () {
 
 });
 
+
 Route::name('teachers.')->prefix('teachers')->group(function () {
 
     Route::get('/', [TeacherController::class, 'index'])->name('index');
@@ -52,22 +54,31 @@ Route::name('teachers.')->prefix('teachers')->group(function () {
 
 });
 
+
 Route::resource('majors', MajorController::class);
+
 
 Route::name('classes.')->prefix('classes')->group(function () {
 
-    Route::get('/', IndexController::class)->name('index');
+    // Menampilkan daftar kelas
+    Route::get('/', [IndexController::class, 'index'])->name('index');
 
+    // Form tambah kelas
     Route::get('/create', CreateController::class)->name('create');
 
+    // Menyimpan kelas
     Route::post('/', StoreController::class)->name('store');
 
+    // Menampilkan detail kelas
     Route::get('/{id}', ShowController::class)->name('show');
 
+    // Form edit kelas
     Route::get('/{id}/edit', EditController::class)->name('edit');
 
+    // Update kelas
     Route::put('/{id}', UpdateController::class)->name('update');
 
+    // Hapus kelas
     Route::delete('/{id}', DestroyController::class)->name('destroy');
 
 });
