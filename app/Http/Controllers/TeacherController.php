@@ -71,4 +71,6 @@ class TeacherController extends Controller
     {
         return "Menghapus data guru";
     }
+
+
 }

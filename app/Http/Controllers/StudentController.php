@@ -55,11 +55,18 @@ class StudentController extends Controller
         ]);
     }
 
-    public function store()
-    {
-        return "Melakukan penambahan data siswa";
+    public function store(Request $request)
+    {       
+        $request->validate([
+            'nis' => ['required','string','size:4','unique:students,nis'],
+            'name' => ['required','string',],
+            'gender' => ['required','string','in:Laki-Laki,Perempuan'],
+            'major' => ['required','string', 'in:AKL,TKJ,BID'],
+            'class' => ['required','string'],
+        ]);
+        // print_r($request->all());
     }
-
+    
     public function update(string $id)
     {
         return "Melakukan perubahan data siswa dengan ID: {$id}";
