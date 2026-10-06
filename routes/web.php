@@ -25,7 +25,7 @@ Route::name('students.')->prefix('students')->group(function () {
 
     Route::post('/', [StudentController::class, 'store'])->name('store');
 
-    Route::get('/{id}', [StudentController::class, 'show'])->name('show');
+    Route::get('/{student}', [StudentController::class, 'show'])->name('show')->whereNumber('student');
 
     Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
 
